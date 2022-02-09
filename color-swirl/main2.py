@@ -45,7 +45,7 @@ def main():
 			if swirlAnimationOptions.colorGrid.getPoint(x,y) != None:
 				newColor = swirlAnimationOptions.colorGrid.getPoint(x,y)
 				color = (newColor['r'], newColor['g'], newColor['b'])
-				swirlLine.color = color
+				swirlAnimationOptions.swirlLine.color = color
 			swirlAnimationOptions.matrix.SetPixel(x, y, color[0], color[1], color[2])
 
 			time.sleep(.01)
