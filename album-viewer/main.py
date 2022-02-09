@@ -73,7 +73,7 @@ def main():
 			for j in range(0, len(fallback_grid[i])):
 				c = fallback_grid[i][j]
 				matrix.SetPixel(i,j,c[0], c[1], c[2])
-	print(fallback_grid[0][0])
+
 	while True:
 		try:
 			current_track_info = get_current_track()
