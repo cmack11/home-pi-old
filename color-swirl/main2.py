@@ -19,7 +19,7 @@ class SwirlAnimationOptions:
 		self.maxSpots = (32*32) // 4
 
 		self.colorGrid = ColorGrid(32,32,self.numSpots)
-		self.swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
+		self.swirlLine = SwirlLine(0,0, (255,255,255), 16,16,8)
 
 	def onSwirlLineReset(self):
 		self.matrix.Clear()
