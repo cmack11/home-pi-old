@@ -4,32 +4,33 @@ import sys
 from colorgrid import ColorGrid
 from swirlline import SwirlLine
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
+class SwirlAnimationOptions:
+	self.options = RGBMatrixOptions()
+	self.options.rows = 32
+	self.options.cols = 32
+	self.options.chain_length = 1
+	self.options.parallel = 1
+	self.options.hardware_mapping = 'adafruit-hat'
 
-options = RGBMatrixOptions()
-options.rows = 32
-options.cols = 32
-options.chain_length = 1
-options.parallel = 1
-options.hardware_mapping = 'adafruit-hat'
+	self.matrix = RGBMatrix(options = options)
 
-matrix = RGBMatrix(options = options)
+	self.numSpots = 0
+	self.maxSpots = (32*32) // 4
 
-numSpots = 0
-maxSpots = (32*32) // 4
+	self.colorGrid = ColorGrid(32,32,numSpots)
+	self.swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
 
-colorGrid = ColorGrid(32,32,numSpots)
-swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
-
-def onSwirlLineReset():
-	matrix.Clear()
-	numSpots += 1
-	numSpots %= maxSpots
-	colorGrid = ColorGrid(32,32,numSpots)
-	for point in colorGrid.getPoints():
-		matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
+	def onSwirlLineReset(self):
+		self.matrix.Clear()
+		self.numSpots += 1
+		self.numSpots %= maxSpots
+		self.colorGrid = ColorGrid(32,32,numSpots)
+		for point in self.colorGrid.getPoints():
+			self.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
 def main():
-	swirlLine.onReset = onSwirlLineReset
+	swirlAnimationOptions = SwilrAnimationOptions()
+	swirlLine.onReset = swirlAnimationOptions.onSwirlLineReset
 	for point in colorGrid.getPoints():
 		matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
