@@ -63,10 +63,10 @@ class SwirlLine:
 				self.deltaY = 0
 
 		def nextPoint(self):
-			point = (self.x,self.y,self.color)
+			point = (self.offset+self.x,self.offset+self.y,self.color)
 			didReset = self.step()
 			if didReset:
-				point = (self.x,self.y,self.color)
+				point = (self.offset+self.x,self.offset+self.y,self.color)
 			return point
 
 		# def printLine(self):
