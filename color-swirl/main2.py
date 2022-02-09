@@ -31,21 +31,21 @@ class SwirlAnimationOptions:
 def main():
 	swirlAnimationOptions = SwilrAnimationOptions()
 	swirlLine.onReset = swirlAnimationOptions.onSwirlLineReset
-	for point in colorGrid.getPoints():
-		matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
+	for point in swirlAnimationOptions.colorGrid.getPoints():
+		swirlAnimationOptions.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
 	try:
 		print("Press CTRL-C to stop.")
 		while True:
-			point = swirlLine.nextPoint()
+			point = swirlAnimationOptions.swirlLine.nextPoint()
 			x = point[0]
 			y = point[1]
 			color = point[2]
-			if colorGrid.getPoint(x,y) != None:
-				newColor = colorGrid.getPoint(x,y)
+			if swirlAnimationOptions.colorGrid.getPoint(x,y) != None:
+				newColor = swirlAnimationOptions.colorGrid.getPoint(x,y)
 				color = (newColor['r'], newColor['g'], newColor['b'])
 				swirlLine.color = color
-			matrix.SetPixel(x, y, color[0], color[1], color[2])
+			swirlAnimationOptions.matrix.SetPixel(x, y, color[0], color[1], color[2])
 
 			time.sleep(.01)
 
