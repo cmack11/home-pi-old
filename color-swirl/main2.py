@@ -13,7 +13,7 @@ class SwirlAnimationOptions:
 		self.options.parallel = 1
 		self.options.hardware_mapping = 'adafruit-hat'
 
-		self.matrix = RGBMatrix(options = options)
+		self.matrix = RGBMatrix(options = self.options)
 
 		self.numSpots = 0
 		self.maxSpots = (32*32) // 4
