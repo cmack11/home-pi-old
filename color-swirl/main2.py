@@ -28,8 +28,15 @@ def main():
 		print("Press CTRL-C to stop.")
 		while True:
 			point = swirlLine.nextPoint()
+			x = point[0]
+			y = point[1]
+			color = point[2]
+			if colorGrid.getPoint(x,y) != None:
+				newColor = colorGrid.getPoint(x,y)
+				color = (newColor['r'], newColor['g'], newColor['b'])
+				swirlLine.color = color
+			matrix.SetPixel(x, y, color[0], color[1], color[2])
 
-			print(point)
 			time.sleep(.1)
 
 	except KeyboardInterrupt:
