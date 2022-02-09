@@ -19,6 +19,7 @@ matrix = RGBMatrix(options = options)
 canvas = matrix
 
 numSpots = 0
+maxSpots = (32*32) // 4
 colorGrid = ColorGrid(32,32,numSpots)
 r = 255
 g = 255
@@ -52,6 +53,7 @@ try:
 			yMin = 0
 			yMax = 31
 			numSpots += 1
+			numSpots %= maxSpots
 			colorGrid = ColorGrid(32,32,numSpots)
 			for point in colorGrid.getPoints():
 			        matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
@@ -96,7 +98,7 @@ try:
 			deltaX = 1
 			deltaY = 0
 		# offset_canvas = matrix.SwapOnVSync(offset_canvas)
-		time.sleep(.01)
+		time.sleep(.001)
 
 		# print("x: {} y: {} {}:{}|{}:{}".format(x, y, xMin, xMax, yMin, yMax))
 except KeyboardInterrupt:
