@@ -5,20 +5,21 @@ from colorgrid import ColorGrid
 from swirlline import SwirlLine
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 class SwirlAnimationOptions:
-	self.options = RGBMatrixOptions()
-	self.options.rows = 32
-	self.options.cols = 32
-	self.options.chain_length = 1
-	self.options.parallel = 1
-	self.options.hardware_mapping = 'adafruit-hat'
+	def __init__():
+		self.options = RGBMatrixOptions()
+		self.options.rows = 32
+		self.options.cols = 32
+		self.options.chain_length = 1
+		self.options.parallel = 1
+		self.options.hardware_mapping = 'adafruit-hat'
 
-	self.matrix = RGBMatrix(options = options)
+		self.matrix = RGBMatrix(options = options)
 
-	self.numSpots = 0
-	self.maxSpots = (32*32) // 4
+		self.numSpots = 0
+		self.maxSpots = (32*32) // 4
 
-	self.colorGrid = ColorGrid(32,32,numSpots)
-	self.swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
+		self.colorGrid = ColorGrid(32,32,numSpots)
+		self.swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
 
 	def onSwirlLineReset(self):
 		self.matrix.Clear()
@@ -29,7 +30,7 @@ class SwirlAnimationOptions:
 			self.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
 def main():
-	swirlAnimationOptions = SwilrAnimationOptions()
+	swirlAnimationOptions = SwirlAnimationOptions()
 	swirlLine.onReset = swirlAnimationOptions.onSwirlLineReset
 	for point in swirlAnimationOptions.colorGrid.getPoints():
 		swirlAnimationOptions.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
