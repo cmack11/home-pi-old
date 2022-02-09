@@ -27,7 +27,6 @@ class SwirlLine:
 			self.y += self.deltaY
 
 			if self.yMax <= self.yMin and self.xMax <= self.xMin:
-				print("reset: {} {} {} {}".format(self.yMax,self.yMin,self.xMax,self.xMin))
 				if self.onReset:
 					self.onReset()
 				self.setup()

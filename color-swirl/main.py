@@ -1,105 +1,58 @@
-#!/usr/bin/env python
 import time
 import sys
 
 from colorgrid import ColorGrid
+from swirlline import SwirlLine
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
+class SwirlAnimationOptions:
+	def __init__(self):
+		self.options = RGBMatrixOptions()
+		self.options.rows = 32
+		self.options.cols = 32
+		self.options.chain_length = 1
+		self.options.parallel = 1
+		self.options.hardware_mapping = 'adafruit-hat'
 
-time.sleep(5)
+		self.matrix = RGBMatrix(options = self.options)
 
-# Configuration for the matrix
-options = RGBMatrixOptions()
-options.rows = 32
-options.cols = 32
-options.chain_length = 1
-options.parallel = 1
-options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
+		self.numSpots = 0
+		self.maxSpots = (32*32) // 4
 
-matrix = RGBMatrix(options = options)
-canvas = matrix
+		self.colorGrid = ColorGrid(32,32,self.numSpots)
+		self.swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
 
-numSpots = 0
-maxSpots = (32*32) // 4
-colorGrid = ColorGrid(32,32,numSpots)
-r = 255
-g = 255
-b = 255
+	def onSwirlLineReset(self):
+		self.matrix.Clear()
+		self.numSpots += 1
+		self.numSpots %= self.maxSpots
+		self.colorGrid = ColorGrid(32,32,self.numSpots)
+		for point in self.colorGrid.getPoints():
+			self.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
-x = 0
-deltaX = 1
-y = 0
-deltaY = 0
-xMin = 0
-xMax = 31
-yMin = 0
-yMax = 31
+def main():
+	swirlAnimationOptions = SwirlAnimationOptions()
+	swirlAnimationOptions.swirlLine.onReset = swirlAnimationOptions.onSwirlLineReset
+	for point in swirlAnimationOptions.colorGrid.getPoints():
+		swirlAnimationOptions.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
-offset_canvas = matrix.CreateFrameCanvas()
+	try:
+		print("Press CTRL-C to stop.")
+		while True:
+			point = swirlAnimationOptions.swirlLine.nextPoint()
+			x = point[0]
+			y = point[1]
+			color = point[2]
+			if swirlAnimationOptions.colorGrid.getPoint(x,y) != None:
+				newColor = swirlAnimationOptions.colorGrid.getPoint(x,y)
+				color = (newColor['r'], newColor['g'], newColor['b'])
+				swirlAnimationOptions.swirlLine.color = color
+			swirlAnimationOptions.matrix.SetPixel(x, y, color[0], color[1], color[2])
 
-for point in colorGrid.getPoints():
-	matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
+			time.sleep(.01)
 
-try:
-	print("Press CTRL-C to stop.")
-	while True:
-		if yMax <= yMin and xMax <= xMin:
-			matrix.Clear()
-			x = 0
-			y = 0
-			deltaX = 1
-			deltaY = 0
-			xMin = 0
-			xMax = 31
-			yMin = 0
-			yMax = 31
-			numSpots += 1
-			numSpots %= maxSpots
-			colorGrid = ColorGrid(32,32,numSpots)
-			for point in colorGrid.getPoints():
-			        matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
+	except KeyboardInterrupt:
+		sys.exit(0)
 
-			continue
-		if colorGrid.getPoint(x,y) != None:
-			r = colorGrid.getPoint(x,y)['r']
-			b = colorGrid.getPoint(x,y)['b']
-			g = colorGrid.getPoint(x,y)['g']
 
-		matrix.SetPixel(x,y, r, g, b)
-
-		x += deltaX
-		y += deltaY
-
-		if x > xMax and deltaX != 0:
-			# print("right edge")
-			yMin += abs(deltaX)
-			x = xMax
-			y = yMin
-			deltaX = 0
-			deltaY = 1
-		if y > yMax and deltaY != 0:
-			# print("bottom edge")
-			xMax -= abs(deltaY)
-			x = xMax
-			y = yMax
-			deltaX = -1
-			deltaY = 0
-		if x < xMin and deltaX != 0:
-			# print("left edge")
-			yMax -= abs(deltaX)
-			x = xMin
-			y = yMax
-			deltaX = 0
-			deltaY = -1
-		if y < yMin and deltaY != 0:
-			# print("top edge")
-			xMin += abs(deltaY)
-			x = xMin
-			y = yMin
-			deltaX = 1
-			deltaY = 0
-		# offset_canvas = matrix.SwapOnVSync(offset_canvas)
-		time.sleep(.001)
-
-		# print("x: {} y: {} {}:{}|{}:{}".format(x, y, xMin, xMax, yMin, yMax))
-except KeyboardInterrupt:
-	sys.exit(0)
+if __name__ == '__main__':
+	main()
