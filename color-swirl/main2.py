@@ -31,7 +31,7 @@ class SwirlAnimationOptions:
 
 def main():
 	swirlAnimationOptions = SwirlAnimationOptions()
-	swirlLine.onReset = swirlAnimationOptions.onSwirlLineReset
+	swirlAnimationOptions.swirlLine.onReset = swirlAnimationOptions.onSwirlLineReset
 	for point in swirlAnimationOptions.colorGrid.getPoints():
 		swirlAnimationOptions.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
