@@ -27,10 +27,11 @@ class SwirlLine:
 			self.y += self.deltaY
 
 			if self.yMax <= self.yMin and self.xMax <= self.xMin:
+				print("reset: {} {} {} {}".format(self.yMax,self.yMin,self.xMax,self.xMin))
 				if self.onReset:
 					self.onReset()
-					self.setup()
-				return
+				self.setup()
+				return True
 
 			if self.x > self.xMax and self.deltaX != 0:
 				# print("right edge")
@@ -63,15 +64,17 @@ class SwirlLine:
 
 		def nextPoint(self):
 			point = (self.x,self.y,self.color)
-			self.step()
+			didReset = self.step()
+			if didReset:
+				point = (self.x,self.y,self.color)
 			return point
 
 		# def printLine(self):
 			# print("{}x{} - {} \n {} ".format(self.width, self.height, self.numSpots,self.colorGrid))
 
 def main():
-	line = SwirlLine(0,0,(0,0,0),5,5)
-	for i in range(30):
+	line = SwirlLine(0,0,(0,0,0),3,3)
+	for i in range(11):
 		print(line.nextPoint())
 
 if __name__ == '__main__':
