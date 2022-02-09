@@ -29,7 +29,7 @@ def onSwirlLineReset():
 		matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
 def main():
-	swirlLine.onReset(onSwirlLineReset)
+	swirlLine.onReset = onSwirlLineReset
 	for point in colorGrid.getPoints():
 		matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 

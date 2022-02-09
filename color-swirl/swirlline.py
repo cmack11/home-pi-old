@@ -28,7 +28,7 @@ class SwirlLine:
 
 			if self.yMax <= self.yMin and self.xMax <= self.xMin:
 				if self.onReset:
-					self.onReset[0]()
+					self.onReset()
 					self.setup()
 				return
 
@@ -65,9 +65,6 @@ class SwirlLine:
 			point = (self.x,self.y,self.color)
 			self.step()
 			return point
-			
-		def onReset(self, func):
-			self.onReset = func
 
 		# def printLine(self):
 			# print("{}x{} - {} \n {} ".format(self.width, self.height, self.numSpots,self.colorGrid))
