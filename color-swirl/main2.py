@@ -25,7 +25,7 @@ class SwirlAnimationOptions:
 		self.matrix.Clear()
 		self.numSpots += 1
 		self.numSpots %= self.maxSpots
-		self.colorGrid = ColorGrid(32,32,numSpots)
+		self.colorGrid = ColorGrid(32,32,self.numSpots)
 		for point in self.colorGrid.getPoints():
 			self.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
