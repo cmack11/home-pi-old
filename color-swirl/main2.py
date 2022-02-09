@@ -22,8 +22,8 @@ swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
 
 def onSwirlLineReset():
 	matrix.Clear()
-	numSpaces += 1
-	numSpaces %= maxSpaces
+	numSpots += 1
+	numSpots %= maxSpots
 	colorGrid = ColorGrid(32,32,numSpots)
 	for point in colorGrid.getPoints():
 		matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
