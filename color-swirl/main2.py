@@ -5,7 +5,7 @@ from colorgrid import ColorGrid
 from swirlline import SwirlLine
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 class SwirlAnimationOptions:
-	def __init__():
+	def __init__(self):
 		self.options = RGBMatrixOptions()
 		self.options.rows = 32
 		self.options.cols = 32
