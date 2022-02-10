@@ -7,7 +7,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 class SwirlAnimationOptions:
 	def __init__(self):
 		self.options = RGBMatrixOptions()
-		options.rows = 32
+		self.options.rows = 32
 		self.options.cols = 64
 		self.options.chain_length = 2
 		self.options.parallel = 1
