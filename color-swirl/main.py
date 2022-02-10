@@ -18,16 +18,16 @@ class SwirlAnimationOptions:
 		self.matrix = RGBMatrix(options = self.options)
 
 		self.numSpots = 0
-		self.maxSpots = (32*32) // 4
+		self.maxSpots = (64*64) // 4
 
-		self.colorGrid = ColorGrid(32,32,self.numSpots)
-		self.swirlLine = SwirlLine(0,0, (255,255,255), 32,32)
+		self.colorGrid = ColorGrid(64,64,self.numSpots)
+		self.swirlLine = SwirlLine(0,0, (255,255,255), 64,64)
 
 	def onSwirlLineReset(self):
 		self.matrix.Clear()
 		self.numSpots += 1
 		self.numSpots %= self.maxSpots
-		self.colorGrid = ColorGrid(32,32,self.numSpots)
+		self.colorGrid = ColorGrid(64,64,self.numSpots)
 		for point in self.colorGrid.getPoints():
 			self.matrix.SetPixel(point['x'],point['y'],point['color']['r'],point['color']['g'],point['color']['b'])
 
