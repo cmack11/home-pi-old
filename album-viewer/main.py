@@ -59,7 +59,7 @@ def main():
 	options.parallel = 1
 	options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
 	options.gpio_slowdown = 1
-	options.pixel_mapper= 'V-mapper:Z'
+	options.pixel_mapper_config = 'V-mapper:Z'
 
 	matrix = RGBMatrix(options = options)
 
