@@ -7,11 +7,13 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 class SwirlAnimationOptions:
 	def __init__(self):
 		self.options = RGBMatrixOptions()
-		self.options.rows = 32
-		self.options.cols = 32
-		self.options.chain_length = 1
+		options.rows = 32
+		self.options.cols = 64
+		self.options.chain_length = 2
 		self.options.parallel = 1
-		self.options.hardware_mapping = 'adafruit-hat'
+		self.options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
+		self.options.gpio_slowdown = 1
+		self.options.pixel_mapper_config = 'V-mapper:Z'
 
 		self.matrix = RGBMatrix(options = self.options)
 
