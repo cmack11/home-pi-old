@@ -9,6 +9,7 @@ from io import BytesIO
 from pprint import pprint
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from spotifyAssetManager import SpotifyAssetManager
 
 scope = "user-read-playback-state"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(username="22ej4dth6quu3mpgvum4e5yki",client_id=cred.client_id, client_secret= cred.client_secret, redirect_uri=cred.redirect_url, scope=scope, open_browser=False))
