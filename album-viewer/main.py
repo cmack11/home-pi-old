@@ -78,7 +78,7 @@ def main():
 				matrix.SetPixel(i,j,c[0], c[1], c[2])
 
 	while True:
-		if spManager.getTrackId() and spManger.getTrackId() != current_track_id:
+		if spManager.getTrackId() and spManager.getTrackId() != current_track_id:
 			#pprint(
 				#current_track_info,
 				#indent=4,
