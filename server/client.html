@@ -22,7 +22,7 @@
 
 <script>
 
-    const socket = new WebSocket('ws://localhost:8765');
+    const socket = new WebSocket(getWebSocketServer());
 
 socket.addEventListener('open', function (event) {
 
@@ -44,6 +44,16 @@ function contactServer () {
     socket.send("Initialize "+val);
     val++;
 
+}
+
+function getWebSocketServer() {
+  if (window.location.host === "aaugustin.github.io") {
+    return "wss://home-pi.herokuapp.com/";
+  } else if (window.location.host === "localhost:8000") {
+    return "ws://localhost:8001/";
+  } else {
+    throw new Error(`Unsupported host: ${window.location.host}`);
+  }
 }
 
 </script>
