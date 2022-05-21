@@ -47,7 +47,7 @@ function contactServer () {
 }
 
 function getWebSocketServer() {
-  if (window.location.host === "aaugustin.github.io") {
+  if (true || window.location.host === "aaugustin.github.io") {
     return "wss://home-pi.herokuapp.com/";
   } else if (window.location.host === "localhost:8000") {
     return "ws://localhost:8001/";
