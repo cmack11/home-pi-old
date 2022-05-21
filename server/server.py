@@ -15,7 +15,7 @@ async def main():
     loop.add_signal_handler(signal.SIGTERM, stop.set_result, None)
 
     port = int(os.environ.get("PORT", "8001"))
-    async with websockets.serve(handler, "", port):
-        await stop run forever
+    async with websockets.serve(echo, "", port):
+        await stop
 
 asyncio.run(main())
