@@ -1,61 +1,15 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>WebSocker Client</title>
-
-</head>
-
-<body>
-
-    <button onclick="contactServer()">Click Here</button>
-
-</body>
-
-<script>
-
-    const socket = new WebSocket(getWebSocketServer());
-
-socket.addEventListener('open', function (event) {
-
-    socket.send('Connection Established');
-
-});
-
- socket.addEventListener("close",function () {
- 	console.log('close')
- })
-
-socket.addEventListener('message', function (event) {
-
-    console.log(event.data);
-
-});
-let val = 0;
-function contactServer () {
-    socket.send("Initialize "+val);
-    val++;
-
-}
-
-function getWebSocketServer() {
-  if (true || window.location.host === "aaugustin.github.io") {
-    return "wss://home-pi.herokuapp.com/";
-  } else if (window.location.host === "localhost:8000") {
-    return "ws://localhost:8001/";
-  } else {
-    throw new Error(`Unsupported host: ${window.location.host}`);
-  }
-}
-
-</script>
-
+  <head>
+    <title>Connect Four</title>
+  </head>
+  <body>
+    <div class="actions">
+      <a class="action new" href="/">New</a>
+      <a class="action join" href="">Join</a>
+      <a class="action watch" href="">Watch</a>
+    </div>
+    <div class="board"></div>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
