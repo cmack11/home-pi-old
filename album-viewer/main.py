@@ -9,6 +9,7 @@ from io import BytesIO
 from pprint import pprint
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+from spotifyAssetManager import SpotifyAssetManager
 
 scope = "user-read-playback-state"
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(username="22ej4dth6quu3mpgvum4e5yki",client_id=cred.client_id, client_secret= cred.client_secret, redirect_uri=cred.redirect_url, scope=scope, open_browser=False))
@@ -51,6 +52,7 @@ def get_current_track():
 def main():
 	current_track_id = None
 
+	spManager = SpotifyAssetManager()
 	# Configuration for the matrix
 	options = RGBMatrixOptions()
 	options.rows = 32
@@ -76,24 +78,21 @@ def main():
 				matrix.SetPixel(i,j,c[0], c[1], c[2])
 
 	while True:
-		try:
-			current_track_info = get_current_track()
-		except Exception:
-			continue
-		if current_track_info['id'] and current_track_info['id'] != current_track_id:
-			pprint(
-				current_track_info,
-				indent=4,
-			)
-			current_track_id = current_track_info['id']
-			album_url = current_track_info['album_cover_art']
-			response = requests.get(album_url)
-			img = Image.open(BytesIO(response.content))
+		if spManager.getTrackId() and spManager.getTrackId() != current_track_id:
+			#pprint(
+				#current_track_info,
+				#indent=4,
+			#)
+			print('setting', spManager.getTrackId())
+			current_track_id = spManager.getTrackId()
+			img = spManager.getImage()
+			if img == None:
+				break;
 			# Make image fit our screen.
 			img.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
 			matrix.SetImage(img.convert('RGB'))
-		elif not current_track_info or not current_track_info['id']:
-			matrix.SetImage(fallback_img)
+		#elif not current_track_info or not current_track_info['id']:
+			#matrix.SetImage(fallback_img)
 		time.sleep(1)
 
 

@@ -1,0 +1,157 @@
+Suggestion: to slightly improve display update, add
+	isolcpus=3
+at the end of /boot/cmdline.txt and reboot (see README.md)
+Suggestion: to slightly improve display update, add
+	isolcpus=3
+at the end of /boot/cmdline.txt and reboot (see README.md)
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273b8cfdd1d51bebe09a9f5f63f',
+    'id': '1RSBK5VWdjPjHEmRhAkS4Q',
+    'track_name': 'Sacrifice'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2737060b604602090f2143b64ed',
+    'id': '3QUzJqgkcjvsLhgqVos6ha',
+    'track_name': 'Cloudy Day'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27389992f4d7d4ab94937bf9e23',
+    'id': '0rzNMzZsubFcXSEh7dnem7',
+    'track_name': 'Hold Up'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273f1157b7dcd21bae0c2c75d89',
+    'id': '1OxcIUqVmVYxT6427tbhDW',
+    'track_name': 'Fly Away'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2731764a4e742fe4c69e4d16316',
+    'id': '0mBkoM8r7KAQzZij5swTUL',
+    'track_name': 'Walking On A Dream'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273678fa6a3c5eb21163f280885',
+    'id': '00s8dO3RWrFkBqC9JIy6ag',
+    'track_name': 'Right Back Where We Started From'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2739012e092ad8ed4731ea11134',
+    'id': '1UZOjK1BwmwWU14Erba9CZ',
+    'track_name': 'Malibu'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27340eea368f4fb5f5ee6dcd9a8',
+    'id': '1JQ6Xm1JrvHfvAqhl5pwaA',
+    'track_name': 'Easy'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2737ed1df1690df31d094d7c2bc',
+    'id': '6txWz9UapYHVxEd7dDIHXT',
+    'track_name': 'No Rain'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273dcd829318f889df294d2bb7a',
+    'id': '0q21FNwES2bbtcduB6kjEU',
+    'track_name': 'Dancing in the Moonlight'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273a9bae94ddb20a71f573931c0',
+    'id': '0BRHnOFm6sjxN1i9LJrUDu',
+    'track_name': 'The Anthem'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2737372b1c882eb872e558f9264',
+    'id': '3ZpiT9OFY8BawTHDTi1Pfz',
+    'track_name': 'Big Yellow Taxi'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273e651d6dd8cc3af4288bf77b4',
+    'id': '0IF0vGwaJQ8ZCh0QxhW6OV',
+    'track_name': 'Man! I Feel Like A Woman!'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2736eaa0691ac9d790b41d21a91',
+    'id': '0r4SsYcwvd8URat6AS2m6f',
+    'track_name': 'Lush Life'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273ab480fe5878e1ca3a00b718d',
+    'id': '5lA6mFOvaiienokVbTZEQx',
+    'track_name': 'Mambo No. 5 (A Little Bit of...)'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2738544567bdc5afbafaffc3449',
+    'id': '44CZRkOxv7UItaAUmh8PgN',
+    'track_name': 'Doses & Mimosas'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2731d579563f814da8508cafad2',
+    'id': '3UjtIALeg72qmJiKPWBvM3',
+    'track_name': 'What You Know'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2732e35d25eb7288830d5540484',
+    'id': '0pMfPzdRiPAoSM9yWF4OcT',
+    'track_name': 'Golden Hour'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2733efcd243aaa5638f55318f91',
+    'id': '20OFwXhEXf12DzwXmaV7fj',
+    'track_name': 'Bad Moon Rising'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2737bdb15adafb585ea140b18fe',
+    'id': '5xxWrRREmhXADNU0ATvGWy',
+    'track_name': 'Floats My Boat'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273d84a9bbcba91cb6a4a212b1b',
+    'id': '0GO8y8jQk1PkHzS31d699N',
+    'track_name': 'Tongue Tied'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2739eece7a1b7140aaf4056b9b4',
+    'id': '6vODhpvfWwdsO0i9MBWnEq',
+    'track_name': 'Dani California'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273b19d1cc6a00ae1d4ddcbfd37',
+    'id': '0P6AWOA4LG1XOctzaVu5tt',
+    'track_name': 'The Weekend - Funk Wav Remix'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2732ae4fcec560ab559d6f5dc88',
+    'id': '5tdKaKLnC4SgtDZ6RlWeal',
+    'track_name': 'How Will I Know'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2730cc3cbb9e3ab97df363c236f',
+    'id': '4U5CjTT6uObhD2vwnD4zOF',
+    'track_name': 'Corona And Lime'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273e4d82e7848a4243839f2121e',
+    'id': '5j9iuo3tMmQIfnEEQOOjxh',
+    'track_name': 'Best Day Of My Life'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273279d967ebbfd039a1006f984',
+    'id': '77hjM9bMmgfTGJXv14UFmi',
+    'track_name': 'Play That Song'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27329f951c74e9cbfffeb7b52f9',
+    'id': '4w7RuuQAVP0JXlAom3z1aC',
+    'track_name': 'Wonderwall'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273d9e06f988048ecf3c54ca749',
+    'id': '4HA2jo7wkMdN1lmLO6ryzE',
+    'track_name': 'End Of The Line'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2737563abd8344a283666509e75',
+    'id': '7BDbyDs5FUmnh955RABFd7',
+    'track_name': 'Good Kisser'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2732db1f620d6d51d31825ebebe',
+    'id': '1C0pmryC2MdXfa7MZ9uIrU',
+    'track_name': 'One Week'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2734117e531f63855d072059d6e',
+    'id': '2H7PHVdQ3mXqEHXcvclTB0',
+    'track_name': '1999'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273f4b69b957a5e949a4076c656',
+    'id': '4z4PB23xYTg1oANmyZovsw',
+    'track_name': "Why Can't I?"}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273c79b600289a80aaef74d155d',
+    'id': '5xTtaWoae3wi06K5WfVUUH',
+    'track_name': 'Shake It Off'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273680566cac04b0bb569899114',
+    'id': '2mQ1RBK7s87mdPCzh97RSH',
+    'track_name': 'Heaven'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2731d4675d5a0345bb93686e4b6',
+    'id': '4ZoBC5MhSEzuknIgAkBaoT',
+    'track_name': 'My Life'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273a7ea08ab3914c5fb2084a8ac',
+    'id': '5h40ovzXu7rF7Giwb9oXYy',
+    'track_name': 'Girls'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27350570144b4a9a459406f9a3d',
+    'id': '51pshtuYkgUQnt5huMPbKL',
+    'track_name': 'The Spins'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2738ba29b297a3e252d9d3e59a2',
+    'id': '2Iq6HhIquO7JKr0KfTNLzU',
+    'track_name': 'My Type'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273d67c496c586f830b6a73ea8c',
+    'id': '5DJNyvuMmZfsfvdTpMMmUq',
+    'track_name': 'Sour Patch Kids'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273a111f7769013f1731e9c697c',
+    'id': '0bI75qIwDBeIxq24tc4uKr',
+    'track_name': 'Guitar String / Wedding Ring'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2739e1cfc756886ac782e363d79',
+    'id': '6K4t31amVTZDgR3sKmwUJJ',
+    'track_name': 'The Less I Know The Better'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273f5c4e59e9c4cdba319752a6e',
+    'id': '74z2lfZ7fj3IqoK71lHkZw',
+    'track_name': 'Mr. Blue Sky'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27333c6b920eabcf4c00d7a1093',
+    'id': '1KnJwhZU3DIBe54Q4HPpIl',
+    'track_name': 'Higher'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27361fe6d3a50c0beaa3cfe33e9',
+    'id': '4e4fqjx0Izh4svvTef1z7e',
+    'track_name': 'Meant to Be (feat. Florida Georgia Line)'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2735795e01c151ba5a8ce4bd295',
+    'id': '4byXh93siQtzKLdjKuJaAF',
+    'track_name': 'No Plan'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b273b2b2747c89d2157b0b29fb6a',
+    'id': '6Qj1WXW41Mn3Fh9V2sHphM',
+    'track_name': 'On Top Of The World'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27356080feb452fa7ad4ca61d8b',
+    'id': '1OWu2Vin6WH1gVvgO05Pw8',
+    'track_name': 'Prosecco'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e',
+    'id': '5qII2n90lVdPDcgXEEVHNy',
+    'track_name': 'Sunday Morning'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b27321f02a52720857a42bba5417',
+    'id': '3bH4HzoZZFq8UpZmI2AMgV',
+    'track_name': 'New Light'}
+{   'album_cover_art': 'https://i.scdn.co/image/ab67616d0000b2730f79ee059074b3d8e7cf6454'
