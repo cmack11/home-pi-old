@@ -9,7 +9,7 @@ import signal
 import websockets
 
 from connect4 import PLAYER1, PLAYER2, Connect4
-
+import colorgrid 
 
 JOIN = {}
 
@@ -93,7 +93,7 @@ async def start(websocket):
     # receiving moves from this game, and secret access tokens.
     game = Connect4()
     connected = {websocket}
-
+    colorgrid.main()
     join_key = secrets.token_urlsafe(12)
     JOIN[join_key] = game, connected
 
@@ -191,7 +191,7 @@ async def main():
     loop.add_signal_handler(signal.SIGTERM, stop.set_result, None)
 
     port = int(os.environ.get("PORT", "8001"))
-    async with websockets.serve(handler, "", port):
+    async with websockets.serve(handler, "206.55.189.52", port):
         await stop
 
 
